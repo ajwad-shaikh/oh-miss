@@ -1,3 +1,25 @@
+var db = firebase.database();
+// var north_atlantic = db.ref("dataset/north_atlantic")
+
+// export const NorthAtlantic = () => {
+//     north_atlantic.once("value")
+//     .then(snapshot => snapshot.json());
+// }
+
+var north_atlantic = db.ref("dataset/north_atlantic")
+
+export const NorthAtlantic = () => {
+    return north_atlantic.once("value")
+        .then(snapshot => {
+            var dataNorthAtlantic = [];
+            snapshot.forEach(function (childSnap) {
+                dataNorthAtlantic.push(childSnap.val());
+            });
+            //console.log(dataNorthAtlantic);
+            return Promise.all(dataNorthAtlantic);
+        });
+};
+
 export const SouthAtlantic = [{
         id: 0,
         type: 'marker',
@@ -5147,3 +5169,4 @@ export const Boundary = [{
         [38.771752, -90.184708],
     ],
 }, ]
+//console.log(SouthAtlantic);

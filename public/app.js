@@ -1,10 +1,12 @@
 import {
     SouthAtlantic,
-    NorthAtlantic
+    NorthAtlantic,
+    dataFetcher
 } from './dataProvider.js';
 
 // var Boundaries = boundaryFeatures;
 var dataNorthAtlantic = [];
+var dataBundle = [];
 // console.log(dataNorthAtlantic);
 
 
@@ -17,27 +19,49 @@ new Vue({
         tileLayer: null,
         layers: [{
                 id: 0,
-                name: 'South Atlantic Data Points',
+                name: 'North Atlantic',
                 active: false,
-                features: SouthAtlantic,
+                features: dataBundle,
             },
             {
                 id: 1,
-                name: 'North Atlantic Data Points',
+                name: 'South Atlantic',
                 active: false,
-                features: dataNorthAtlantic,
+                features: dataBundle,
+            },
+            {
+                id: 2,
+                name: 'South Pacific',
+                active: false,
+                features: dataBundle,
+            },
+            {
+                id: 3,
+                name: 'Asia Pacific',
+                active: false,
+                features: dataBundle,
+            },
+            {
+                id: 4,
+                name: 'Southern Ocean',
+                active: false,
+                features: dataBundle,
             },
         ],
     },
     mounted() {
         /* Code to run when app is mounted */
-        NorthAtlantic()
-            .then((dataNorthAtlantic) => {
-                this.layers[1].features = dataNorthAtlantic;
+        dataFetcher()
+            .then((dataBundle) => {
+                this.layers[0].features = dataBundle[0];
+                this.layers[1].features = dataBundle[1];
+                this.layers[2].features = dataBundle[2];
+                this.layers[3].features = dataBundle[3];
+                this.layers[4].features = dataBundle[4];
                 this.initMap();
                 this.initLayers();
-                console.log(dataNorthAtlantic);
-            });
+                //console.log(dataNorthAtlantic);
+            })
     },
     methods: {
         /* Any app-specific functions go here */
@@ -64,15 +88,15 @@ new Vue({
             });
             this.layers.forEach((layer) => {
                 // Initialize the layer
-                //const markerFeatures = layer.features.filter(feature => feature.type === 'marker');
-                console.log(layer);
-                const markerFeatures = layer.features;
+                const markerFeatures = layer.features.filter(feature => feature.type === 'marker');
+                //console.log(layer);
+                //const markerFeatures = layer.features;
                 const polygonFeatures = layer.features.filter(feature => feature.type === 'polygon');
                 markerFeatures.forEach((feature) => {
                     feature.leafletObject = L.marker(feature.coords, {
                             icon: markerIcon
                         })
-                        .bindPopup(String(feature.coords));
+                        .bindPopup(String(feature.temp));
                 });
                 polygonFeatures.forEach((feature) => {
                     feature.leafletObject = L.polygon(feature.coords)

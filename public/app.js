@@ -1,6 +1,4 @@
 import {
-    SouthAtlantic,
-    NorthAtlantic,
     dataFetcher
 } from './dataProvider.js';
 
@@ -9,8 +7,6 @@ var dataNorthAtlantic = [];
 var dataBundle = [];
 // console.log(dataNorthAtlantic);
 
-
-console.log(SouthAtlantic);
 new Vue({
     el: '#app',
     data: {
@@ -60,7 +56,7 @@ new Vue({
                 this.layers[4].features = dataBundle[4];
                 this.initMap();
                 this.initLayers();
-                //console.log(dataNorthAtlantic);
+                console.log(dataBundle);
             })
     },
     methods: {

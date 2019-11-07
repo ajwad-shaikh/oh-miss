@@ -39,7 +39,7 @@ export const dataFetcher = () => {
                 .forEach(function (childData) {
                     dataSouthAtlantic.push(childData.val());
                 });
-            dataBundle.push(SouthAtlantic);
+            dataBundle.push(dataSouthAtlantic);
             dataSnapshot.child("south_pacific")
                 .forEach(function (childData) {
                     dataSouthPacific.push(childData.val());

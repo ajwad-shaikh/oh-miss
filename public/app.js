@@ -13,13 +13,13 @@ new Vue({
         tileLayer: null,
         layers: [{
                 id: 0,
-                name: 'North Atlantic',
+                name: 'South Atlantic',
                 active: false,
                 features: dataBundle,
             },
             {
                 id: 1,
-                name: 'South Atlantic',
+                name: 'North Atlantic',
                 active: false,
                 features: dataBundle,
             },
@@ -31,13 +31,25 @@ new Vue({
             },
             {
                 id: 3,
-                name: 'Asia Pacific',
+                name: 'Norwegian',
                 active: false,
                 features: dataBundle,
             },
             {
                 id: 4,
                 name: 'Southern Ocean',
+                active: false,
+                features: dataBundle,
+            },
+            {
+                id: 5,
+                name: 'Russian Arctic',
+                active: false,
+                features: dataBundle,
+            },
+            {
+                id: 6,
+                name: 'Indian Ocean',
                 active: false,
                 features: dataBundle,
             },
@@ -53,6 +65,8 @@ new Vue({
                 this.layers[2].features = dataBundle[2];
                 this.layers[3].features = dataBundle[3];
                 this.layers[4].features = dataBundle[4];
+                this.layers[5].features = dataBundle[5];
+                this.layers[6].features = dataBundle[6];
                 this.initLayers();
                 console.log(dataBundle);
             })
@@ -76,10 +90,19 @@ new Vue({
             this.tileLayer.addTo(this.map);
         },
         initLayers() {
-            var markerIcon = L.icon({
-                iconUrl: 'img/favicon.png',
+            var highIcon = L.icon({
+                iconUrl: 'img/high_temp.png',
                 iconSize: [10, 10],
             });
+            var medIcon = L.icon({
+                iconUrl: 'img/medium_temp.png',
+                iconSize: [10, 10],
+            });
+            var lowIcon = L.icon({
+                iconUrl: 'img/low_temp.png',
+                iconSize: [10, 10],
+            });
+            
             this.layers.forEach((layer) => {
                 // Initialize the layer
                 const markerFeatures = layer.features.filter(feature => feature.type === 'marker');
@@ -87,10 +110,24 @@ new Vue({
                 //const markerFeatures = layer.features;
                 const polygonFeatures = layer.features.filter(feature => feature.type === 'polygon');
                 markerFeatures.forEach((feature) => {
-                    feature.leafletObject = L.marker(feature.coords, {
-                            icon: markerIcon
+                    if(feature.temp < 5){
+                        feature.leafletObject = L.marker(feature.coords, {
+                            icon: lowIcon
                         })
                         .bindPopup(String(feature.temp));
+                    }
+                    else if(feature.temp > 15) {
+                        feature.leafletObject = L.marker(feature.coords, {
+                            icon: highIcon
+                        })
+                        .bindPopup(String(feature.temp));
+                    }
+                    else {
+                        feature.leafletObject = L.marker(feature.coords, {
+                            icon: medIcon
+                        })
+                        .bindPopup(String(feature.temp));
+                    }
                 });
                 polygonFeatures.forEach((feature) => {
                     feature.leafletObject = L.polygon(feature.coords)

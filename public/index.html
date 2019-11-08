@@ -70,74 +70,110 @@
     </section><!-- #hero -->
 
     <main id="main">
-    
-    <section id="app">
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9">
-                    <!-- The map goes here -->
-                    <div id="map" class="map"></div>
-                </div>
-                <div class="col-md-3">
-                    <!-- The layer checkboxes go here -->
-                    <div class="form-check" v-for="layer in layers" :key="layer.id">
-                        <!-- label and input elements go here -->
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" v-model="layer.active"
-                                @change="layerChanged(layer.id, layer.active)" />
-                            {{ layer.name }}
-                        </label>
+
+        <section id="app">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <!-- The map goes here -->
+                        <div id="map" class="map"></div>
+                    </div>
+                    <div class="col-md-2">
+                        <!-- The layer checkboxes go here -->
+                        <legend class="col-form-label">
+                            <h3>Radios</h3>
+                        </legend>
+                        <div class="form-check" v-for="layer in layers" :key="layer.id">
+                            <!-- label and input elements go here -->
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" v-model="layer.active"
+                                    @change="layerChanged(layer.id, layer.active)" />
+                                <p>
+                                    {{ layer.name }}
+                                </p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <!-- The layer checkboxes go here -->
+                        <legend class="col-form-label">
+                            <h3>Timelines</h3>
+                        </legend>
+                        <div class="form-check">
+                            <!-- label and input elements go here -->
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" />
+                                <p>
+                                    2018-19
+                                </p>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" />
+                                <p>
+                                    2017-18
+                                </p>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" />
+                                <p>
+                                    2016-17
+                                </p>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </section>
+        </section>
 
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-    <!-- Firebase Libraries -->
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+        <!-- Firebase Libraries -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+        <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
 
-    <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyBZFwcFyvAx6oToALMJeLj8wPQ_NzYOuj8",
-        authDomain: "oh-miss.firebaseapp.com",
-        databaseURL: "https://oh-miss.firebaseio.com",
-        projectId: "oh-miss",
-        storageBucket: "oh-miss.appspot.com",
-        messagingSenderId: "1046048582310",
-        appId: "1:1046048582310:web:a417a200cad741852da267",
-        measurementId: "G-JSCLY2NX4R"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    </script>
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyBZFwcFyvAx6oToALMJeLj8wPQ_NzYOuj8",
+                authDomain: "oh-miss.firebaseapp.com",
+                databaseURL: "https://oh-miss.firebaseio.com",
+                projectId: "oh-miss",
+                storageBucket: "oh-miss.appspot.com",
+                messagingSenderId: "1046048582310",
+                appId: "1:1046048582310:web:a417a200cad741852da267",
+                measurementId: "G-JSCLY2NX4R"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+        </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
-    <script type="module" src="app.js"></script>
-    <!-- JavaScript Libraries -->
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/jquery/jquery-migrate.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/superfish/hoverIntent.js"></script>
-    <script src="lib/superfish/superfish.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+        <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+        <script type="module" src="app.js"></script>
+        <!-- JavaScript Libraries -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/jquery/jquery-migrate.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/superfish/hoverIntent.js"></script>
+        <script src="lib/superfish/superfish.min.js"></script>
 
-    <script src="js/main.js"></script>
+        <script src="js/main.js"></script>
 
 </body>
 

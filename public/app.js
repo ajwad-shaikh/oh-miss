@@ -2,8 +2,6 @@ import {
     dataFetcher
 } from './dataProvider.js';
 
-// var Boundaries = boundaryFeatures;
-var dataNorthAtlantic = [];
 var dataBundle = [];
 // console.log(dataNorthAtlantic);
 
@@ -47,6 +45,7 @@ new Vue({
     },
     mounted() {
         /* Code to run when app is mounted */
+        this.initMap();
         dataFetcher()
             .then((dataBundle) => {
                 this.layers[0].features = dataBundle[0];
@@ -54,7 +53,6 @@ new Vue({
                 this.layers[2].features = dataBundle[2];
                 this.layers[3].features = dataBundle[3];
                 this.layers[4].features = dataBundle[4];
-                this.initMap();
                 this.initLayers();
                 console.log(dataBundle);
             })
@@ -71,7 +69,7 @@ new Vue({
             this.tileLayer = L.tileLayer(
                 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}.png', {
                     maxZoom: 18,
-                    noWrap: true,
+                    noWrap: false,
                     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>',
                 }
             );

@@ -140,12 +140,15 @@ new Vue({
             const layer = this.layers.find(layer => layer.id === layerId);
             layer.features.forEach((feature) => {
                 /* Show or hide the feature depending on the active argument */
-                if (active) {
+                if (!active) {
                     feature.leafletObject.addTo(this.map);
+                    layer.active = true;
                 } else {
                     feature.leafletObject.removeFrom(this.map);
+                    layer.active = false;
                 }
             });
+            console.log(active);
         },
     },
 });

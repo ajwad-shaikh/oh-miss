@@ -1,8 +1,8 @@
 import {
-    dataFetcher
+    dataFetcher, liveData
 } from './dataProvider.js';
 
-var dataBundle = [];
+var dataBundle = [], liveBundle = [];
 // console.log(dataNorthAtlantic);
 
 new Vue({
@@ -54,10 +54,16 @@ new Vue({
                 features: dataBundle,
             },
         ],
+        tableContent: liveBundle,
     },
     mounted() {
         /* Code to run when app is mounted */
         this.initMap();
+        liveData()
+            .then((liveBundle) => {
+                this.tableContent = liveBundle;
+                console.log(liveBundle);
+            });
         dataFetcher()
             .then((dataBundle) => {
                 this.layers[0].features = dataBundle[0];

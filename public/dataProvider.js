@@ -111,3 +111,16 @@ export const dataFetcher = () => {
             return Promise.all(dataBundle);
         });
 }
+
+var liveDataset = db.ref("liveData");
+
+export const liveData = () => {
+    return liveDataset.once("value")
+        .then(snapshot => {
+            var dataLiveFeed = [];
+            snapshot.forEach(function (childNode){
+                dataLiveFeed.push(childNode.val());
+            });
+            return Promise.all(dataLiveFeed);
+        });
+}

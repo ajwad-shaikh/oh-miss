@@ -13,10 +13,15 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900&display=swap" rel="stylesheet">
     <!-- Icons -->
     <link href="./js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
-    <link href="./js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <!-- <link href="./js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" /> -->
     <!-- CSS Files -->
     <link href="./css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css">
+    
+    
+    <script src="./js/plugins/jquery/dist/jquery.min.js"></script>
+
+
 </head>
 
 <body class="">
@@ -31,94 +36,11 @@
             <a class="navbar-brand pt-0" href="./index.html">
                 <img src="img/logo.png" class="navbar-brand-img" alt="...">
             </a>
-            <!-- User -->
-            <ul class="nav align-items-center d-md-none">
-                <li class="nav-item dropdown">
-                    <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        <i class="ni ni-bell-55"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right"
-                        aria-labelledby="navbar-default_dropdown_1">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        <div class="media align-items-center">
-                            <span class="avatar avatar-sm rounded-circle">
-                                <img alt="Image placeholder" src="./assets/img/theme/team-1-800x800.jpg
-">
-                            </span>
-                        </div>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                        <div class=" dropdown-header noti-title">
-                            <h6 class="text-overflow m-0">Welcome!</h6>
-                        </div>
-                        <a href="./examples/profile.html" class="dropdown-item">
-                            <i class="ni ni-single-02"></i>
-                            <span>My profile</span>
-                        </a>
-                        <a href="./examples/profile.html" class="dropdown-item">
-                            <i class="ni ni-settings-gear-65"></i>
-                            <span>Settings</span>
-                        </a>
-                        <a href="./examples/profile.html" class="dropdown-item">
-                            <i class="ni ni-calendar-grid-58"></i>
-                            <span>Activity</span>
-                        </a>
-                        <a href="./examples/profile.html" class="dropdown-item">
-                            <i class="ni ni-support-16"></i>
-                            <span>Support</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#!" class="dropdown-item">
-                            <i class="ni ni-user-run"></i>
-                            <span>Logout</span>
-                        </a>
-                    </div>
-                </li>
-            </ul>
             <!-- Collapse -->
             <div class="collapse navbar-collapse" id="sidenav-collapse-main">
-                <!-- Collapse header -->
-                <div class="navbar-collapse-header d-md-none">
-                    <div class="row">
-                        <div class="col-6 collapse-brand">
-                            <a href="./index.html">
-                                <img src="./assets/img/brand/blue.png">
-                            </a>
-                        </div>
-                        <div class="col-6 collapse-close">
-                            <button type="button" class="navbar-toggler" data-toggle="collapse"
-                                data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false"
-                                aria-label="Toggle sidenav">
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Form -->
-                <form class="mt-4 mb-3 d-md-none">
-                    <div class="input-group input-group-rounded input-group-merge">
-                        <input type="search" class="form-control form-control-rounded form-control-prepended"
-                            placeholder="Search" aria-label="Search">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <span class="fa fa-search"></span>
-                            </div>
-                        </div>
-                    </div>
-                </form>
                 <!-- Navigation -->
                 <ul class="navbar-nav">
-                    <li class="nav-item  class=" active" ">
+                    <li class="nav-item"  active >
           <a class=" nav-link active " href=" ./index.html"> <i class="ni ni-tv-2 text-primary"></i> Dashboard
                         </a>
                     </li>
@@ -182,49 +104,41 @@
         </div>
     </nav>
     <div class="main-content">
-        <!-- Navbar -->
+        <!-- Top Bar -->
         <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
             <div class="container-fluid">
                 <!-- Brand -->
-                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a>
+                <a class="h1 mb-0 text-white d-none d-lg-inline-block" style="font-weight: 600; font-size:2.6em; letter-spacing: -.01em;" href="./index.html">Dashboard</a>
 
                 <!-- User -->
                 <ul class="navbar-nav align-items-center d-none d-md-flex">
                     <li class="nav-item dropdown">
                         <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
+                            <button class="btn btn-secondary" style="box-shadow: none; border: none;">
                             <div class="media align-items-center">
                                 <span class="avatar avatar-sm rounded-circle">
                                     <img alt="Image placeholder" src="img/user.jpg">
                                 </span>
                                 <div class="media-body ml-2 d-none d-lg-block">
-                                    <span class="mb-0 text-sm  font-weight-bold">Ajwad</span>
+                                    <span class="mb-0 text-sm font-weight-bold">Ajwad Shaikh</span>
                                 </div>
                             </div>
+                        </button>
                         </a>
                         <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                            <div class=" dropdown-header noti-title">
-                                <h6 class="text-overflow m-0">Welcome!</h6>
-                            </div>
                             <a href="./examples/profile.html" class="dropdown-item">
-                                <i class="ni ni-single-02"></i>
-                                <span>My profile</span>
+                                <i class="fa fa-user"></i>
+                                <span>My Profile</span>
                             </a>
+
                             <a href="./examples/profile.html" class="dropdown-item">
-                                <i class="ni ni-settings-gear-65"></i>
+                                <i class="fa fa-cog"></i>
                                 <span>Settings</span>
-                            </a>
-                            <a href="./examples/profile.html" class="dropdown-item">
-                                <i class="ni ni-calendar-grid-58"></i>
-                                <span>Activity</span>
-                            </a>
-                            <a href="./examples/profile.html" class="dropdown-item">
-                                <i class="ni ni-support-16"></i>
-                                <span>Support</span>
                             </a>
                             <div class="dropdown-divider"></div>
                             <a href="#!" class="dropdown-item">
-                                <i class="ni ni-user-run"></i>
+                                <i class="fa fa-sign-out-alt"></i>
                                 <span>Logout</span>
                             </a>
                         </div>
@@ -232,93 +146,195 @@
                 </ul>
             </div>
         </nav>
-        <!-- End Navbar -->
+        <!-- End Top Bar -->
         <!-- Header -->
         <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
             <div class="container-fluid">
                 <div class="header-body">
                     <!-- Card stats -->
                     <div class="row">
+
+                        <!--Device Status-->
                         <div class="col-xl-3 col-lg-6">
                             <div class="card card-stats mb-4 mb-xl-0">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Temperature Spike</h5>
-                                            <span class="h2 font-weight-bold mb-0">350,897</span>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Device Status Monitor</h5>
+                                            <span class="h2 font-weight-bold mb-0">1 Incident</span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                                <i class="fas fa-chart-bar"></i>
+                                                <i class="fa fa-medkit"></i>
                                             </div>
                                         </div>
-                                    </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                                        <span class="text-nowrap">Since last month</span>
+                                    </div><br>
+                                    <p class="mt-3 mb-0text-sm">
+                                        <span class="text-success mr-2">All Systems Operational</span>
                                     </p>
                                 </div>
                             </div>
                         </div>
+
+                        <!--SD Card-->
                         <div class="col-xl-3 col-lg-6">
                             <div class="card card-stats mb-4 mb-xl-0">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
-                                            <span class="h2 font-weight-bold mb-0">2,356</span>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">SD Card Health</h5>
+                                            <span class="h2 font-weight-bold mb-0">Good</span>
                                         </div>
                                         <div class="col-auto">
-                                            <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                                                <i class="fas fa-chart-pie"></i>
+                                            <div class="icon icon-shape bg-success text-white rounded-circle shadow">
+                                                <i class="fa fa-sd-card"></i>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
-                                        <span class="text-nowrap">Since last week</span>
+                                    <!-- <p class="mt-3 mb-0 text-muted text-sm">
+                                        <span class="text-nowrap">No Action Required</span> -->
+                                        <div class="progress-wrapper">
+                                            <div class="progress-info">
+                                              <div class="progress-label-success">
+                                                <span>Memory Used</span>
+                                              </div>
+                                              <div class="progress-percentage">
+                                                <span>340MB / 2GB</span>
+                                              </div>
+                                            </div>
+                                            <div class="progress">
+                                              <div class="progress-bar bg-success" role="progressbar" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100" style="width: 17%;"></div>
+                                            </div>
+                                          </div>
                                     </p>
                                 </div>
                             </div>
                         </div>
+
+                        <!--Last Ping-->
+                        <div class="col-xl-3 col-lg-6">
+                                <div class="card card-stats mb-4 mb-xl-0">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h5 class="card-title text-uppercase text-muted mb-0">Last Ping</h5>
+                                                <span class="h2 font-weight-bold mb-0">5 Seconds Ago</span>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="icon icon-shape bg-success text-white rounded-circle shadow">
+                                                    <i class="fa fa-broadcast-tower"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+
+                                        <p class="mt-3 mb-0 text-sm">
+                                            <span class="mr-2"><strong>Last Coordinates</strong></span>
+                                            <span class="text-muted text-nowrap"> 23.17, 80.27</span>
+                                        </p>
+
+                                    </div>
+
+                                    <!-- <div class="col-auto">
+                                        <br>
+                                        <button class="btn btn-icon btn-3 btn-primary" type="button">
+                                            
+                                            <span class="btn-inner--text">With icon</span>
+                                            <span class="btn-inner--icon"><i class="fa fa-broadcast-tower"></i></span>
+                                            
+                                        </button>
+
+                                    </div> -->
+                                    
+
+                                    <div class="col-auto">
+                                        <br>
+                                            <button type="button" class="btn btn-block btn-icon btn-danger mb-3" data-toggle="modal" data-target="#modal-alert">
+                                                <span class="btn-inner--text">Ping Now</span>
+                                                <span class="btn-inner--icon"><i class="fa fa-bullseye"></i></span>
+                                            </button>
+
+                                            <!--Modal Ping Alert-->
+                                            <div class="modal fade" id="modal-alert" tabindex="-1" role="dialog" aria-labelledby="modal-alert" aria-hidden="true">
+                                          <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                                              <div class="modal-content bg-gradient-danger">
+
+                                                  <div class="modal-body">
+                                                      
+                                                      <div class="py-3 text-center">
+                                                          <i class="fa fa-exclamation-circle" style="font-size: 2em;"></i>
+                                                          <h4 class="heading mt-4">INFORMATION</h4>
+                                                          <p>Due to signal errors, ping command might not reach or will reach later than expected. Do not assume lost device on first few tries alone.</p>
+                                                      </div>
+                                                      
+                                                  </div>
+                                                  
+                                                  <div class="modal-footer">
+                                                      <button type="button" class="btn btn-white" data-toggle="modal" data-dismiss="modal" data-target="#modal-ps">Send Ping</button>
+                                                      <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Cancel</button>
+                                                  </div>
+                                                  
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <!--Modal Ping Send-->
+
+                                      <div class="modal fade" id="modal-ps" tabindex="-1" role="dialog" aria-labelledby="modal-ps" aria-hidden="true">
+                                            <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                                                <div class="modal-content bg-gradient-success">
+
+                                                    <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">×</span>
+                                                                </button>
+                                                    </div>
+  
+                                                    <div class="modal-body">
+                                                        
+                                                        <div class="py-3 text-center">
+                                                            <i class="fa fa-check-circle" style="font-size: 2em;"></i>
+                                                            <h4 class="heading mt-4">PING SENT</h4>
+                                                            <p>You will be notified of successful ping on the dashboard.</p>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Near Port-->
                         <div class="col-xl-3 col-lg-6">
                             <div class="card card-stats mb-4 mb-xl-0">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
-                                            <span class="h2 font-weight-bold mb-0">924</span>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                                                <i class="fas fa-users"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                                        <span class="text-nowrap">Since yesterday</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6">
-                            <div class="card card-stats mb-4 mb-xl-0">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
-                                            <span class="h2 font-weight-bold mb-0">49,65%</span>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Nearest Port ETA</h5>
+                                            <span class="h2 font-weight-bold mb-0">4 Days</span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                                                <i class="fas fa-percent"></i>
+                                                <i class="fa fa-anchor"></i>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                                        <span class="text-nowrap">Since last month</span>
+                                    <p class="mt-3 mb-0 text-sm">
+                                        <span class="mr-2">Distance</span>
+                                        <span class="text-muted text-nowrap">3862.4 KM</span>
                                     </p>
                                 </div>
                             </div>
@@ -327,21 +343,27 @@
                 </div>
             </div>
         </div>
+        <!--App Data-->
         <section id="app">
             <div class="container-fluid mt--7">
+               
+               <!--Stats 1-->
                 <div class="row">
                     <div class="col-xl-12 mb-5 mb-xl-0">
                         <div class="card bg-gradient-default shadow">
                             <div class="card-header bg-transparent">
-                                <div class="row align-items-center">
-                                    <div class="col">
+                                <div class="row">
+                                    <!--Temp Visualization-->
+                                    <div class="col" >
                                         <h6 class="text-uppercase text-light ls-1 mb-1">Overview</h6>
                                         <h2 class="text-white mb-0">Temperature Visualization</h2>
-                                        <br>
-                                        <div class="btn-group col-xs-12 nav-pills" data-toggle="buttons"
+                                    </div>
+                                        <!--Year Buttons-->
+                                            <div class="nav-pills btn-group cbhide mr-3" data-toggle="buttons"
                                             v-for="layer in layers" :key="layer.id">
-                                            <label class="btn btn-default nav-link py-2 px-3"
-                                                @click="layerChanged(layer.id, layer.active)">
+                                            <label class="btn btn-default nav-link "
+                                                @click="layerChanged(layer.id, layer.active)"
+                                                style="padding-right: 2em;">
                                                 <input type="checkbox"> {{ layer.name }}
                                             </label>
                                             <!-- <li class="nav-item mr-2 mr-md-0" >
@@ -351,26 +373,14 @@
                                                         <span class="d-md-none">{{ layer.name }}</span>
                                                     </a>
                                                 </li> -->
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
                             <!--Card Content-->
                             <div class="card-body">
-                                <!--Maps-->
+                                <!--Map-->
                                 <div id="map" class="map"></div>
-                                <br>
-                                <!--Sliders-->
-                                <div class="input-slider-container">
-                                    <div id="input-slider" class="input-slider" data-range-value-min="100"
-                                        data-range-value-max="500"></div>
-                                    <div class="row mt-3 d-none">
-                                        <div class="col-6">
-                                            <span id="input-slider-value" class="range-slider-value"
-                                                data-range-value-low="100"></span>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -379,8 +389,11 @@
 
                     </div>
                 </div>
+
+                <!--Stats 2-->
                 <div class="row mt-5">
-                    <div class="col-xl-8 mb-5 mb-xl-0">
+                    <!--Vessels-->
+                    <div class="col-xl-7 mb-5 mb-xl-0">
                         <div class="card shadow">
                             <div class="card-header bg-transparent">
                                 <div class="row align-items-center">
@@ -395,7 +408,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <!-- Chart -->
+                                <!-- Vessel Data -->
                                 <div style="width: 100%; height: 100%; font-size: 10px;">
                                     <iframe src="https://www.shipmap.org" style="width: 100%; height:700px;"
                                         frameborder="0"></iframe><br><br>
@@ -408,7 +421,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4">
+
+                    <!--Right Tables-->
+                    <div class="col-xl-5">
+                      
+                      <!--Live Data-->
+                        <div class="col">
                         <div class="card shadow">
                             <div class="card-header border-0">
                                 <div class="row align-items-center">
@@ -416,11 +434,12 @@
                                         <h3 class="mb-0">Live Incoming Data</h3>
                                     </div>
                                     <div class="col text-right">
-                                        <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                                        <a href="#!" class="btn btn-sm btn-primary">View All</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="table-responsive">
+
                                 <!-- Projects table -->
                                 <table class="table align-items-center table-flush">
                                     <thead class="thead-light">
@@ -452,7 +471,60 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <br>
+                    
+                    <!--Components Data-->
+                    <div class="col">
+                            <div class="card shadow">
+                                <div class="card-header border-0">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <h3 class="mb-0">Component Monitor</h3>
+                                        </div>
+                                        <div class="col text-right">
+                                            <a href="#!" class="btn btn-sm btn-primary">View Reports
+                                                <span class="badge-md badge-danger text-nowrap  ml-2">1</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <!-- Data table -->
+                                    <table id="compt" class="table align-items-center table-flush" >
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th scope="col">Component</th>
+                                                <th scope="col">Status</th>
+                                                <!-- <th scope="col">Refreashed Ago</th> -->
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="row in compStatTable">
+                                                <th scope="row">
+                                                    {{row.Component}}
+                                                </th>
+                                                <td>
+                                                    {{row.Status}}
+                                                </td>
+                                                <!-- <td>
+                                                    {{row.Refreashed (Sec Ago)}}
+                                                </td> -->
+    
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                    
                 </div>
+
+                
                 <!-- Footer -->
                 <footer class="footer">
                     <div class="row align-items-center justify-content-xl-between">
@@ -495,12 +567,14 @@
     </script>
 
     <!--   Core   -->
-    <script src="./js/plugins/jquery/dist/jquery.min.js"></script>
+    
     <script src="./js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
     <script type="module" src="app.js"></script>
+    <script src="https://kit.fontawesome.com/d1e0d765ec.js" crossorigin="anonymous"></script>
     <!--   Optional JS   -->
+  
     <script src="./js/plugins/chart.js/dist/Chart.min.js"></script>
     <script src="./js/plugins/chart.js/dist/Chart.extension.js"></script>
     <script src="./js/plugins/nouislider/distribute/nouislider.min.js"></script>
@@ -514,6 +588,7 @@
     <script src="./js/argon-dashboard.min.js?v=1.1.0"></script>
     <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 
 </html>

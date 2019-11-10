@@ -1,8 +1,12 @@
 import {
-    dataFetcher, liveData
+    dataFetcher,
+    liveData,
+    compStat
 } from './dataProvider.js';
 
-var dataBundle = [], liveBundle = [];
+var dataBundle = [],
+    liveBundle = [],
+    compBundle = []
 // console.log(dataNorthAtlantic);
 
 new Vue({
@@ -55,6 +59,7 @@ new Vue({
             },
         ],
         tableContent: liveBundle,
+        compStatTable: compBundle,
     },
     mounted() {
         /* Code to run when app is mounted */
@@ -64,6 +69,13 @@ new Vue({
                 this.tableContent = liveBundle;
                 console.log(liveBundle);
             });
+
+        compStat()
+            .then((compBundle) => {
+                this.compStatTable = compBundle;
+                console.log(compBundle);
+            });
+
         dataFetcher()
             .then((dataBundle) => {
                 this.layers[0].features = dataBundle[0];
@@ -108,7 +120,7 @@ new Vue({
                 iconUrl: 'img/low_temp.png',
                 iconSize: [10, 10],
             });
-            
+
             this.layers.forEach((layer) => {
                 // Initialize the layer
                 const markerFeatures = layer.features.filter(feature => feature.type === 'marker');
@@ -116,23 +128,21 @@ new Vue({
                 //const markerFeatures = layer.features;
                 const polygonFeatures = layer.features.filter(feature => feature.type === 'polygon');
                 markerFeatures.forEach((feature) => {
-                    if(feature.temp < 5){
+                    if (feature.temp < 5) {
                         feature.leafletObject = L.marker(feature.coords, {
-                            icon: lowIcon
-                        })
-                        .bindPopup(String(feature.temp));
-                    }
-                    else if(feature.temp > 15) {
+                                icon: lowIcon
+                            })
+                            .bindPopup(String(feature.temp));
+                    } else if (feature.temp > 15) {
                         feature.leafletObject = L.marker(feature.coords, {
-                            icon: highIcon
-                        })
-                        .bindPopup(String(feature.temp));
-                    }
-                    else {
+                                icon: highIcon
+                            })
+                            .bindPopup(String(feature.temp));
+                    } else {
                         feature.leafletObject = L.marker(feature.coords, {
-                            icon: medIcon
-                        })
-                        .bindPopup(String(feature.temp));
+                                icon: medIcon
+                            })
+                            .bindPopup(String(feature.temp));
                     }
                 });
                 polygonFeatures.forEach((feature) => {

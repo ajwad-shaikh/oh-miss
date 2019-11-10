@@ -118,9 +118,23 @@ export const liveData = () => {
     return liveDataset.once("value")
         .then(snapshot => {
             var dataLiveFeed = [];
-            snapshot.forEach(function (childNode){
+            snapshot.forEach(function (childNode) {
                 dataLiveFeed.push(childNode.val());
             });
             return Promise.all(dataLiveFeed);
+        });
+}
+
+
+var compStatset = db.ref("compStat");
+
+export const compStat = () => {
+    return compStatset.once("value")
+        .then(snapshot => {
+            var statFeed = [];
+            snapshot.forEach(function (childNode) {
+                statFeed.push(childNode.val());
+            });
+            return Promise.all(statFeed);
         });
 }

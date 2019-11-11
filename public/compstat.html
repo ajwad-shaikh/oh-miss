@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+        OH-MISS! Component Status Monitoring
+    </title>
+    <!-- Favicon -->
+    <link href="./img/favicon.png" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link href="./css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css">
+
+
+    <script src="./js/plugins/jquery/dist/jquery.min.js"></script>
+
+
+</head>
+
+<body class="">
+    <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
+        <div class="container-fluid">
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
+                aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Brand -->
+            <a class="navbar-brand pt-0" href="./index.html">
+                <img src="img/logo.png" class="navbar-brand-img" alt="...">
+            </a>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+                <!-- Navigation -->
+                <ul class="navbar-nav">
+                    <li class="nav-item" active>
+                        <a class=" nav-link " href=" ./index.html"> <i class="fa fa-tv text-primary"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="team.html">
+                            <i class="fa fa-users text-primary"></i> Team Members
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="compstat.html">
+                            <i class="fa fa-medkit text-warning"></i> Component Status
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="livedata.html">
+                            <i class="fa fa-circle text-danger"></i> Live Incoming Data
+                        </a>
+                    </li>
+
+
+                </ul>
+                <!-- Divider -->
+                <hr class="my-3">
+                <!-- Heading -->
+                <h6 class="navbar-heading text-muted">Documentation</h6>
+                <!-- Navigation -->
+                <ul class="navbar-nav mb-md-3">
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html">
+                            <i class="ni ni-spaceship"></i> Getting started
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
+                            <i class="ni ni-palette"></i> Foundation
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
+                            <i class="ni ni-ui-04"></i> Components
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="main-content">
+                <!-- Top Bar -->
+                <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+                        <div class="container-fluid">
+                            <!-- Brand -->
+                            <a class="h1 mb-0 text-white d-none d-lg-inline-block"
+                                style="font-weight: 600; font-size:2.6em; letter-spacing: -.01em;" href="compstat.html">Component Status Monitoring</a>
+            
+                            <!-- User -->
+                            <ul class="navbar-nav align-items-center d-none d-md-flex">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <button class="btn btn-secondary" style="box-shadow: none; border: none;">
+                                            <div class="media align-items-center">
+                                                <span class="avatar avatar-sm rounded-circle">
+                                                    <img alt="Image placeholder" src="img/user.jpg">
+                                                </span>
+                                                <div class="media-body ml-2 d-none d-lg-block">
+                                                    <span class="mb-0 text-sm font-weight-bold">Ajwad Shaikh</span>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                                        <a href="./examples/profile.html" class="dropdown-item">
+                                            <i class="fa fa-user"></i>
+                                            <span>My Profile</span>
+                                        </a>
+            
+                                        <a href="./examples/profile.html" class="dropdown-item">
+                                            <i class="fa fa-cog"></i>
+                                            <span>Settings</span>
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#!" class="dropdown-item">
+                                            <i class="fa fa-sign-out-alt"></i>
+                                            <span>Logout</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!-- End Top Bar -->
+                    <!-- Header -->
+                    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-0">
+                        <div class="container-fluid">
+                            <div class="header-body">
+                            </div>
+                        </div>
+                    </div>
+        <!--App Data-->
+        <section id="app">
+            <div class="container-fluid mt-5">
+
+                <!--Stats 1-->
+
+                                <div id="map" class="map" style="display: none;"></div>
+                <!--Stats 2-->
+                <div class="row">
+
+                        <!--Components Data-->
+                        <div class="col">
+                            <div class="card shadow">
+                                <div class="card-header border-0">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <h3 class="mb-0">Component Monitor</h3>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <!-- Data table -->
+                                    <table id="compt" class="table align-items-center table-flush">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th scope="col">Component</th>
+                                                <th scope="col">Status</th>
+                                                <!-- <th scope="col">Refreashed Ago</th> -->
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="row in compStatTable" :key="row.Component">
+                                                <th scope="row">
+                                                    {{row.Component}}
+                                                </th>
+                                                <td
+                                                    :style="[row.Status == 'Ok' ? {'color': '#2dce89'} : row.Status == 'Rebooting' ? {'color': '#f7cb09'} : {'color': '#e21123'}]">
+                                                    {{row.Status}}
+                                                </td>
+                                                <!-- <td>
+                                                    {{row.Refreashed (Sec Ago)}}
+                                                </td> -->
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                </div>
+
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <div class="row align-items-center justify-content-xl-between">
+                        <div class="col-xl-12">
+                            <div class="copyright text-center text-xl-center text-muted">
+                                &copy; 2019 <a href="#" class="font-weight-bold ml-1" target="_blank">OH-MISS!</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </footer>
+            </div>
+    </div>
+    </section>
+
+    <!-- Firebase Libraries -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBZFwcFyvAx6oToALMJeLj8wPQ_NzYOuj8",
+            authDomain: "oh-miss.firebaseapp.com",
+            databaseURL: "https://oh-miss.firebaseio.com",
+            projectId: "oh-miss",
+            storageBucket: "oh-miss.appspot.com",
+            messagingSenderId: "1046048582310",
+            appId: "1:1046048582310:web:a417a200cad741852da267",
+            measurementId: "G-JSCLY2NX4R"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <!--   Core   -->
+
+    <script src="./js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script type="module" src="app.js"></script>
+    <script src="https://kit.fontawesome.com/d1e0d765ec.js" crossorigin="anonymous"></script>
+    <!--   Optional JS   -->
+
+    <script src="./js/plugins/chart.js/dist/Chart.min.js"></script>
+    <script src="./js/plugins/chart.js/dist/Chart.extension.js"></script>
+    <script src="./js/plugins/nouislider/distribute/nouislider.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/superfish/hoverIntent.js"></script>
+    <script src="lib/superfish/superfish.min.js"></script>
+    <!--   Argon JS   -->
+    <script src="./js/argon-dashboard.min.js?v=1.1.0"></script>
+    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

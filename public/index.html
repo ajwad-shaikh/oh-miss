@@ -11,9 +11,7 @@
     <link href="./img/favicon.png" rel="icon" type="image/png">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900&display=swap" rel="stylesheet">
-    <!-- Icons -->
-    <link href="./js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
-    <!-- <link href="./js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" /> -->
+
     <!-- CSS Files -->
     <link href="./css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css">
@@ -41,40 +39,29 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav">
                     <li class="nav-item" active>
-                        <a class=" nav-link active " href=" ./index.html"> <i class="ni ni-tv-2 text-primary"></i>
+                        <a class=" nav-link active " href=" ./index.html"> <i class="fa fa-tv text-primary"></i>
                             Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="./examples/icons.html">
-                            <i class="ni ni-planet text-blue"></i> Icons
+                        <a class="nav-link " href="team.html">
+                            <i class="fa fa-users text-primary"></i> Team Members
                         </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link " href="./examples/maps.html">
-                            <i class="ni ni-pin-3 text-orange"></i> Maps
+                        <a class="nav-link " href="compstat.html">
+                            <i class="fa fa-medkit text-warning"></i> Component Status
                         </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link " href="./examples/profile.html">
-                            <i class="ni ni-single-02 text-yellow"></i> User profile
+                        <a class="nav-link " href="livedata.html">
+                            <i class="fa fa-circle text-danger"></i> Live Incoming Data
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="./examples/tables.html">
-                            <i class="ni ni-bullet-list-67 text-red"></i> Tables
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./examples/login.html">
-                            <i class="ni ni-key-25 text-info"></i> Login
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./examples/register.html">
-                            <i class="ni ni-circle-08 text-pink"></i> Register
-                        </a>
-                    </li>
+
+
                 </ul>
                 <!-- Divider -->
                 <hr class="my-3">
@@ -84,20 +71,14 @@
                 <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
                         <a class="nav-link"
-                            href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html">
-                            <i class="ni ni-spaceship"></i> Getting started
+                            href="https://www.behance.net/gallery/87536691/OH-MISS">
+                            <i class="fab fa-behance"></i> Project Information
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
-                            href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
-                            <i class="ni ni-palette"></i> Foundation
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                            href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
-                            <i class="ni ni-ui-04"></i> Components
+                            href="#">
+                            <i class="fa fa-github"></i> Source Code
                         </a>
                     </li>
                 </ul>
@@ -241,17 +222,6 @@
 
                                         </div>
 
-                                        <!-- <div class="col-auto">
-                                        <br>
-                                        <button class="btn btn-icon btn-3 btn-primary" type="button">
-                                            
-                                            <span class="btn-inner--text">With icon</span>
-                                            <span class="btn-inner--icon"><i class="fa fa-broadcast-tower"></i></span>
-                                            
-                                        </button>
-
-                                    </div> -->
-
 
                                         <div class="col-auto">
                                             <br>
@@ -351,10 +321,32 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="mt-3 mb-0 text-sm">
-                                        <span class="mr-2">Distance</span>
-                                        <span class="text-muted text-nowrap">3862.4 KM</span>
-                                    </p>
+                                    <div class="row">
+                                            <div class="col">
+    
+                                                <p class="mt-3 mb-0 text-sm">
+                                                    <span class="mr-2"><strong>Distance</strong></span><br>
+                                                    <span class="text-muted text-nowrap"> 3862.4 KM</span>
+                                                </p>
+    
+                                            </div>
+    
+    
+                                            <div class="col-auto">
+                                                <br>
+                                                <button type="button" class="btn btn-block btn-icon btn-info mb-3">
+                                                    <a href="https://www.google.com/maps/place/13%C2%B035'18.7%22N+85%C2%B056'31.7%22E/@13.5885322,85.9399493,17z/data=!3m1!4b1!4m6!3m5!1s0x0:0x0!7e2!8m2!3d13.5885274!4d85.9421376" target="_blank" style="color:white;">
+                                                    <span class="btn-inner--text">View on Map</span>
+                                                    <span class="btn-inner--icon"><i class="fa fa-map-marker-alt"></i></span>
+                                                </a>
+                                                </button>
+    
+                                            </div>
+    
+    
+                                        </div>
+    
+                                    
                                 </div>
                             </div>
                         </div>
@@ -509,7 +501,7 @@
                                 </div>
                                 <div class="table-responsive">
                                     <!-- Data table -->
-                                    <table id="compt" class="table align-items-center table-flush">
+                                    <table id="compt compthide" class="table align-items-center table-flush">
                                         <thead class="thead-light">
                                             <tr>
                                                 <th scope="col">Component</th>
@@ -523,7 +515,7 @@
                                                     {{row.Component}}
                                                 </th>
                                                 <td
-                                                    :style="[row.Status == 'Ok' ? {'color': 'green'} : {'color': 'red'}]">
+                                                    :style="[row.Status == 'Ok' ? {'color': '#2dce89'} : row.Status == 'Rebooting' ? {'color': '#f7cb09'} : {'color': '#e21123'}]">
                                                     {{row.Status}}
                                                 </td>
                                                 <!-- <td>
